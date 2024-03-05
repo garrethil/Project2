@@ -1,14 +1,11 @@
-// // Importing required models
-// const listing = require('./Listing');
-// const City = require('./City');
-// const ListingType = require('./BuildingType');
-// const BuildingType = require('./BuildingType');
-
+// Importing required models
 const sequelize = require('../config/connection');
 const Listing = require('./Listing');
 const City = require('./City');
 const BuildingType = require('./BuildingType');
 const ListingType = require('./ListingType');
+const Location = require('./Location');
+const User = require('./User');
 
 // Defining associations
 Listing.belongsTo(City, { 
@@ -35,7 +32,12 @@ ListingType.hasMany(Listing, {
     foreignKey: 'listing_type', 
 });
 
-module.exports = { Listing, City, BuildingType, ListingType};
+// Not sure
+Location.hasMany(Listing, { 
+    foreignKey: 'location_id', 
+});
+
+module.exports = { Listing, City, BuildingType, ListingType, Location, User};
 
  
 

@@ -14,6 +14,14 @@ City.init(
     city_name: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    location_id: {
+      type: DataTypes.INTEGER, 
+      allowNull: false,
+      references: {
+        model: Location, 
+        key: 'id'       
+      }
     }
   },
   {
