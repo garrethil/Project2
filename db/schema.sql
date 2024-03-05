@@ -6,6 +6,7 @@ CREATE TABLE listing (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     address_name VARCHAR(30) NOT NULL,
     description VARCHAR(300) NOT NULL,
+    price DECIMAL NOT NULL,
     location_id INT,
     building_type INT,
     listing_type INT
