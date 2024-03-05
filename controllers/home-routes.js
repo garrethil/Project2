@@ -5,3 +5,5 @@ const sequelize = require("../config/connection");
 router.get("/", async (req, res) => {});
 
 router.get("/login", async (req, res) => {});
+
+router.get("/signUp", async (req, res) => {});
