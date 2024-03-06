@@ -1,6 +1,6 @@
 -- // Create real_db
-DROP DATABASE IF EXISTS ecommerce_db;
-CREATE DATABASE ecommerce_db;
+DROP DATABASE IF EXISTS real_db;
+CREATE DATABASE real_db;
 
 CREATE TABLE listing (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
