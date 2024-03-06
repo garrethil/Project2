@@ -11,7 +11,7 @@ Listing.init (
             autoIncrement: true,
             allowNull: false
         },
-        adresss_name: {
+        address_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -23,13 +23,13 @@ Listing.init (
             type: DataTypes.DECIMAL,
             allowNull: false
         },
-        location_id: {
-            type: DataTypes.INTEGER
+        user_id: {
+            type: DataTypes.INTEGER,
         },
         building_type: {
             type: DataTypes.INTEGER
         },
-        Listing_type: {
+        listing_type: {
             type: DataTypes.INTEGER
         }
     },

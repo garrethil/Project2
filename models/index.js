@@ -4,7 +4,6 @@ const Listing = require('./Listing');
 const City = require('./City');
 const BuildingType = require('./BuildingType');
 const ListingType = require('./ListingType');
-const Location = require('./Location');
 const User = require('./User');
 
 // Defining associations
@@ -32,12 +31,7 @@ ListingType.hasMany(Listing, {
     foreignKey: 'listing_type', 
 });
 
-// Not sure
-Location.hasMany(Listing, { 
-    foreignKey: 'location_id', 
-});
-
-module.exports = { Listing, City, BuildingType, ListingType, Location, User};
+module.exports = { Listing, City, BuildingType, ListingType, User};
 
  
 
