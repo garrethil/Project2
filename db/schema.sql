@@ -27,3 +27,9 @@ CREATE TABLE listingType (
     l_type VARCHAR(30) NOT NULL
 );
 
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    user_name VARCHAR(30) NOT NULL,
+    pswd VARCHAR(30) NOT NULL
+)
+
