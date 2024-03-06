@@ -1,0 +1,24 @@
+/* .content {
+  background-color: #f6f7f9;
+  opacity: 0.6;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #f6f7f9 11px
+    ),
+    repeating-linear-gradient(#323a4555, #323a45);
+} */
+
+.login {
+  background-color: #323a45; /* Change the color */
+}
+
+.form-label {
+  font-weight: 800;
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.link {
+  font-size: 0.85rem;
+}
