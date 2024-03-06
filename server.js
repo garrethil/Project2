@@ -12,3 +12,7 @@ const hbs = exhbs.create();
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
+
+sequelize.sycn({ force: false }).then(() => {
+  app.listen(PORT, () => console.log("Now listening on port", PORT));
+});
