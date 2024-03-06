@@ -9,3 +9,5 @@ router.get("/login", async (req, res) => {});
 router.get("/signup", async (req, res) => {});
 
 router.get("/logout", async (req, res) => {});
+
+module.exports = router;
