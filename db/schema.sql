@@ -7,6 +7,7 @@ CREATE TABLE listing (
     address_name VARCHAR(30) NOT NULL,
     description VARCHAR(300) NOT NULL,
     price DECIMAL NOT NULL,
+    user_id INT,
     location_id INT,
     building_type INT,
     listing_type INT
