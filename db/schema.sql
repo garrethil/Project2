@@ -2,6 +2,8 @@
 DROP DATABASE IF EXISTS real_db;
 CREATE DATABASE real_db;
 
+USE real_db;
+
 CREATE TABLE listing (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     address_name VARCHAR(30) NOT NULL,
