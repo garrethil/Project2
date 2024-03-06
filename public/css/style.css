@@ -10,13 +10,26 @@ body.login-page {
 }
 
 .login {
-  background-color: #323a45; /* Change the color */
+  background-color: #1c322d; /* Change the color */
+  box-shadow: -30px 15px 0 #9ca7a1; /* Added box shadow for login form */
+  transition: box-shadow 0.8s ease; /* Transition effect */
+}
+
+.login:hover {
+  box-shadow: 30px 15px 0 #9ca7a1; /* Added box shadow for login form */
+}
+
+#emailHelp {
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
 }
 
 .form-label {
   font-weight: 800;
   color: #fff;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
 .link {
