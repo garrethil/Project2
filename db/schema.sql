@@ -20,12 +20,12 @@ CREATE TABLE city (
 
 CREATE TABLE buildingType (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    b_type VARCHAR(30) NOT NULL
+    building_type VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE listingType (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    l_type VARCHAR(30) NOT NULL
+    listing_type VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE users (
