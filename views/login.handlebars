@@ -1,41 +1,37 @@
-<div class="container">
-  <div class="row">
-    <div id="left-column" class="col-md-2"></div>
-    <!-- Offset column to center content -->
-    <div id="main-content" class="login col-12 col-md-8 login mt-5 p-3">
-      <form>
+<body class="login-page">
+  <div class="container">
+    <div class="row">
+      <div id="left-column" class="col-md-2"></div>
+      <!-- Offset column to center content -->
+      <div id="main-content" class="login col-12 col-md-8 login mt-5 p-3">
+        <form>
 
-        <div class="my-3">
-          <label for="email" class="form-label">Email address</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            aria-describedby="emailHelp"
-          />
-          <div id="emailHelp" class="form-text">We'll never share your email
-            with anyone else.</div>
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" />
-        </div>
+          <div class="my-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" />
+            <div id="emailHelp" class="form-text">We'll never share your email
+              with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" />
+          </div>
 
-        <div id="signup-link" class="mb-3">
-          <a href="/signUp" class="form-check-label link">Don't have an account?
-            Sign Up here!</a>
-        </div>
+          <div id="signup-link" class="mb-3">
+            <a href="/signUp" class="form-check-label link">Don't have an account?
+              Sign Up here!</a>
+          </div>
 
-        <div id="submit-button" class="col-md-4 offset-md-4">
-          <!-- Centered column -->
-          <button type="submit" class="btn btn-primary w-100">Submit</button>
-        </div>
+          <div id="submit-button" class="col-md-4 offset-md-4">
+            <!-- Centered column -->
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </div>
 
-      </form>
+        </form>
+      </div>
+      <div id="right-column" class="col-md-2"></div>
+      <!-- Offset column to center content -->
     </div>
-    <div id="right-column" class="col-md-2"></div>
-    <!-- Offset column to center content -->
   </div>
-</div>
 
 <script src="/js/login.js"></script>
