@@ -35,14 +35,23 @@ router.post("/login", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const dbUserData = await User.findOne({
-      where: {username: req.body.username}
+      where: { username: req.body.username },
     });
     if (!dbUserData) {
-      res.status(400).json({ message:`User id ${req.params.id} is not valid.`});
+      res
+        .status(400)
+        .json({ message: `User id ${req.params.id} is not valid.` });
       return;
-    } 
+    }
     // create session, and send response back
-    })
+    req.session.save(() => {
+      req.session.userId = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.logged_in = true;
+      res.status(200).json({ message: "You're logged in!" });
+    });
+  } catch (err) {
+    res.status(400).json(err);
   }
 });
 
