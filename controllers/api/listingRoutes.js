@@ -21,7 +21,7 @@ router.get("/:id", async (req, res) => {
         include: [{ model: City, ListingType, BuildingType, User }]
       });
   
-      if (!categoryData) {
+      if (!listingData) {
         res.status(404).json({ message: "No listing found with that id!"})
         return;
       }
@@ -32,3 +32,10 @@ router.get("/:id", async (req, res) => {
       
     }
   });
+
+// delete Listing by ID
+
+
+
+
+module.exports = router;
