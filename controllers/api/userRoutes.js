@@ -32,6 +32,9 @@ router.post("/login", async (req, res) => {
   }
 });
 
+// POST method to create a new user into the database
+router.post("/", async (req, res) => {});
+
 // router.post("/login", async (req, res) => {
 //   try {
 //     const dbUserData = await User.findOne({
