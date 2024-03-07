@@ -32,11 +32,10 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.post("/login", async (req, res) => {
+// grab data from the front end
+router.post("/", async (req, res) => {
   try {
-    const dbUserData = await User.findOne({
-      where: { username: req.body.username },
-    });
+    const dbUserData = await User.create(req.body);
     if (!dbUserData) {
       res
         .status(400)
