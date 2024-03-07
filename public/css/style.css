@@ -1,4 +1,12 @@
-body.login-page {
+
+
+/* ! NOTE! */
+
+/* The styling for the login as well as the sign up views... */
+/* will share the same styling */
+
+body.login-page,
+.signup-page {
   background-color: #f6e9e9;
   opacity: 1;
   background-image: radial-gradient(#363333 1.05px, transparent 1.05px),
@@ -9,13 +17,16 @@ body.login-page {
     21px 21px;
 }
 
-.login {
+.login,
+.signup {
   background-color: #1c322d; /* Change the color */
   box-shadow: -30px 15px 0 #9ca7a1; /* Added box shadow for login form */
   transition: box-shadow 0.8s ease; /* Transition effect */
 }
 
-.login:hover {
+
+.login:hover, 
+.signup:hover {
   box-shadow: 30px 15px 0 #9ca7a1; /* Added box shadow for login form */
 }
 
