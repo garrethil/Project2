@@ -32,19 +32,25 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.post("/login", async (req, res) => {
-  try {
-    const dbUserData = await User.findOne({
-      where: {username: req.body.username}
-    });
-    if (!dbUserData) {
-      res.status(400).json({ message:`User id ${req.params.id} is not valid.`});
-      return;
-    } 
-    // create session, and send response back
-    })
-  }
-});
+// router.post("/login", async (req, res) => {
+//   try {
+//     const dbUserData = await User.findOne({
+//       where: { username: req.body.username },
+//     });
+//     if (!dbUserData) {
+//       res.status(400).json({
+//         message: `User with username ${req.body.username} does not exist.`,
+//       });
+//       return;
+//     }
+//     // create session, and send response back
+//     // ...
+//     res.status(200).json({ message: "Login successful" });
+//   } catch (err) {
+//     console.error("Error in login:", err);
+//     res.status(500).json({ message: "Internal server error" });
+//   }
+// });
 
 router.post("/logout", async (req, res) => {});
 
