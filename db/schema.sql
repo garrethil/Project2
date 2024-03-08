@@ -31,6 +31,7 @@ CREATE TABLE listingType (
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     user_name VARCHAR(30) NOT NULL,
+    email VARCHAR(30) NOT NULL,
     pswd VARCHAR(30) NOT NULL
 )
 
