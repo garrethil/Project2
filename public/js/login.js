@@ -27,3 +27,8 @@ const handleFormSubmit = async (event) => {
     alert("email or password is incorrect!");
   }
 };
+
+// Add event listener to the submit button
+document
+  .querySelector(".submitBtn")
+  .addEventListener("click", handleFormSubmit);
