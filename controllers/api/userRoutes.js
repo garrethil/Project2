@@ -57,7 +57,7 @@ router.post("/", async (req, res) => {
 router.post("/logout", async (req, res) => {
   try {
     if (req.session.logged_in) {
-      const dbUserData = await req.session.destroy(() => {
+      req.session.destroy(() => {
         res.status(204).end();
       });
     } else {
