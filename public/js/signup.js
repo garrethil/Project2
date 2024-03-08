@@ -28,3 +28,8 @@ const handleFormSubmit = async (event) => {
     alert("Please fill in all fields correctly.");
   }
 };
+
+// Add event listener to the submit button
+document
+  .querySelector(".submitBtn")
+  .addEventListener("click", handleFormSubmit);
