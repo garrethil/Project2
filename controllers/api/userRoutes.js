@@ -32,20 +32,6 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.post("/login", async (req, res) => {
-  try {
-    const dbUserData = await User.findOne({
-      where: {username: req.body.username}
-    });
-    if (!dbUserData) {
-      res.status(400).json({ message:`User id ${req.params.id} is not valid.`});
-      return;
-    } 
-    // create session, and send response back
-    })
-  }
-});
-
 router.post("/logout", async (req, res) => {});
 
 module.exports = router;
