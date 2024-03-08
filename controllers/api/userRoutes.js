@@ -1,6 +1,31 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require("../../models"); // depends on models we'll have
 
+// Endpoint for handling POST requests to create a new user
+router.post("/", async (req, res) => {
+  try {
+    // Creating a new user using the data from the request body
+    const userData = await User.create(req.body);
+
+    // Saving user session data
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      req.session.username = userData.username;
+
+      // Sending response with user data and success message
+      res.json({ user: userData, message: "You have signed in!" });
+    });
+
+    // Logging user data to console for debugging purposes
+    console.log(userData);
+  } catch (err) {
+    // Handling errors if user creation fails
+    console.error(err);
+    res.status(500).json({ message: "Failed to create the user!" }, err);
+  }
+});
+
 router.post("/login", async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -31,7 +56,6 @@ router.post("/login", async (req, res) => {
     res.status(400).json(err);
   }
 });
-
 
 router.post("/logout", async (req, res) => {
   try {
