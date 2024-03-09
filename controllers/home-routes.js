@@ -58,10 +58,12 @@ router.get("/logout", async (req, res) => {
 
 get.router("/cities", async (req, res) => {
     try {
-        const cityNames = await ListingType.findAll()   
+        const cityNames = await City.findAll()  
     
         const cityName = cityNames.map((type) => type.get({ plain: true }));
         res.render("locationspage", { cityName })
+           
+        res.status(200).json(cityData);
     } 
         catch (err) {
             res.status(500).json(err);
@@ -72,10 +74,12 @@ get.router("/cities", async (req, res) => {
 
 get.router("/buildingTypes", async (req, res) => {
     try {
-        const buildingTypeData = await ListingType.findAll()   
+        const buildingTypeData = await BuildingType.findAll()   
     
         const buildingTypes = buildingTypeData.map((type) => type.get({ plain: true }));
         res.render("buildingtypepage", { buildingTypes })
+
+        res.status(200).json(buildingTypeData);
     } 
         catch (err) {
             res.status(500).json(err);
@@ -92,6 +96,7 @@ get.router("/listingTypes", async (req, res) => {
     
         const listingTypes = listingTypeData.map((type) => type.get({ plain: true }));
         res.render("listingtypepage", { listingTypes })
+        res.status(200).json(listingTypeData);
     } 
         catch (err) {
             res.status(500).json(err);
@@ -110,6 +115,7 @@ router.get("/listings", async (req, res) => {
 
 
         res.render("listingspage", { listings })
+        res.status(200).json(listingData);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -130,6 +136,8 @@ router.get("/listings/:id", async (req, res) => {
       const listingInfo = listingData.map((listing) => listing.get({ plain: true }));
   
       res.render("listing", { listingInfo } )
+  
+      res.status(200).json(listingData);
     } catch (err) {
       res.status(500).json(err);
       
