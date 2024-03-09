@@ -19,10 +19,12 @@
           class="navbar col-12 col-md-8 justify-content-md-start justify-content-center"
         >
           <ul>
-            <li>{{#if logged_in}}
-                Logout
+            <li class="my-2">
+              <!-- Conditionally render login or logout links -->
+              {{#if logged_in}}
+                <a id="logout" href="/logout">Logout</a>
               {{else}}
-                User Login
+                <a href="/login">Login</a>
               {{/if}}
             </li>
           </ul>
