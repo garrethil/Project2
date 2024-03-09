@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Post, Comment } = require("../../models"); // depends on models we'll have
+const { User } = require("../../models"); // depends on models we'll have
 
 // Endpoint for handling POST requests to create a new user
 router.post("/", async (req, res) => {
