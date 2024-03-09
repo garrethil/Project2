@@ -1,19 +1,40 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 
-// GET method for homepage route and render hompage views
+// GET method for homepage route to render hompage views
 router.get("/", async (req, res) => {
-  res.render("homepage", {
-    logged_in: req.session.logged_in,
-  });
+  try {
+    console.log(req.session.logged_in);
+
+    // Render homepage with login status
+    res.render("homepage", { logged_in: req.session.logged_in });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
 });
 
 router.get("/login", async (req, res) => {
-  res.render("login");
+  try {
+    if (req.session.logged_in) {
+      res.redirect("/").reload();
+      return;
+    }
+
+    res.render("login");
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
 });
 
 router.get("/signup", async (req, res) => {
   try {
+    if (req.session.logged_in) {
+      res.redirect("/").reload();
+      return;
+    }
+
     res.render("signup");
   } catch (err) {
     console.error(err);
