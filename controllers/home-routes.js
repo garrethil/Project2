@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const sequelize = require("../config/connection");
+const { User } = require("../models");
 
 // GET method for homepage route to render hompage views
 router.get("/", async (req, res) => {
