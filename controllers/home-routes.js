@@ -17,9 +17,10 @@ router.get("/logout", async (req, res) => {});
 
 get.router("/cities", async (req, res) => {
     try {
-        const cityData = await City.findAll()   
+        const cityNames = await ListingType.findAll()   
     
-        res.status(200).json(cityData);
+        const cityName = cityNames.map((type) => type.get({ plain: true }));
+        res.render("locationspage", { cityName })
     } 
         catch (err) {
             res.status(500).json(err);
@@ -30,9 +31,10 @@ get.router("/cities", async (req, res) => {
 
 get.router("/buildingTypes", async (req, res) => {
     try {
-        const buildingTypeData = await BuildingType.findAll()   
+        const buildingTypeData = await ListingType.findAll()   
     
-        res.status(200).json(buildingTypeData);
+        const buildingTypes = buildingTypeData.map((type) => type.get({ plain: true }));
+        res.render("buildingtypepage", { buildingTypes })
     } 
         catch (err) {
             res.status(500).json(err);
@@ -47,7 +49,8 @@ get.router("/listingTypes", async (req, res) => {
     try {
         const listingTypeData = await ListingType.findAll()   
     
-        res.status(200).json(listingTypeData);
+        const listingTypes = listingTypeData.map((type) => type.get({ plain: true }));
+        res.render("listingtypepage", { listingTypes })
     } 
         catch (err) {
             res.status(500).json(err);
@@ -61,7 +64,11 @@ router.get("/listings", async (req, res) => {
         const listingData = await Listing.findAll({
             include: [{ model: City, ListingType, BuildingType, User }]
         });
-        res.status(200).json(listingData);
+
+        const listings = listingData.map((listing) => listing.get({ plain: true }));
+
+
+        res.render("listingspage", { listings })
     } catch (err) {
         res.status(500).json(err);
     }
@@ -78,8 +85,10 @@ router.get("/listings/:id", async (req, res) => {
         res.status(404).json({ message: "No listing found with that id!"})
         return;
       }
+
+      const listingInfo = listingData.map((listing) => listing.get({ plain: true }));
   
-      res.status(200).json(listingData);
+      res.render("listing", { listingInfo } )
     } catch (err) {
       res.status(500).json(err);
       

@@ -3,7 +3,7 @@ const { User, Listing, City, BuildingType, ListingType } = require("../../models
 const withAuth = require("../../utils");
 
 // delete Listing by ID
-router.delete('/listings/:id', withAuth, async (req, res) => {
+router.delete('/listings/:id', async (req, res) => {
   try {
     const listingData = await Listing.destroy({
       where: {
@@ -22,8 +22,8 @@ router.delete('/listings/:id', withAuth, async (req, res) => {
   }
 });
 
-// new listing
-router.post('/listings', withAuth, async (req, res) => {
+// new listing  
+router.post('/listings', async (req, res) => {
   try {
     const { address_name, description, price, user_id, building_type, listing_type } = req.body;
 
