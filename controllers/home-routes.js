@@ -2,14 +2,26 @@ const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { User, Listing, City, BuildingType, ListingType } = require("../models");
 
-// get method for homepage views, login, signup + logout
-router.get("/", async (req, res) => {});
+// GET method for homepage route and render hompage views
+router.get("/", async (req, res) => {
+  res.render("homepage", {
+    logged_in: req.session.logged_in,
+  });
+});
 
 router.get("/login", async (req, res) => {});
 
 router.get("/signup", async (req, res) => {});
 
-router.get("/logout", async (req, res) => {});
+// GET method for logout route
+router.get("/logout", async (req, res) => {
+  try {
+    res.redirect("/").reload();
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
 
 
 
