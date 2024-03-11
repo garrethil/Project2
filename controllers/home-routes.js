@@ -39,7 +39,7 @@ router.get("/signup", async (req, res) => {
   }  catch (err) {
       res.status(500).json(err);
     }
-})
+});
 
 // GET method for logout route
 router.get("/logout", async (req, res) => {

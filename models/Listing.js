@@ -16,7 +16,7 @@ Listing.init (
       allowNull: false
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     price: {
@@ -24,19 +24,35 @@ Listing.init (
       allowNull: false
     },
     user_id: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id"
+      }
     },
     imageUrl: {
       type: DataTypes.STRING // store url of jpeg file
     },
     location_id: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: "city",
+        key: "id"
+      }
     },
     building_type: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: "buildingType",
+        key: "id"
+      }
     },
     listing_type: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: "listingType",
+        key: "id"
+      }
     }
   },
   {
