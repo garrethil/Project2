@@ -1,38 +1,17 @@
 {{#if logged_in}}
-<body class="login-page">
-  <div class="container">
-    <div class="row">
-      <div id="left-column" class="col-md-2"></div>
-      <!-- Offset column to center content -->
-      <div id="main-content" class="login col-12 col-md-8 login mt-5 p-3">
-        <form>
-
-          <div class="my-3">
-            <label for="email" class="form-label">Add Listing</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" />
-            <div id="emailHelp" class="form-text">
-              with anyone else.</div>
-          </div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" />
-          </div>
-
-          <div id="signup-link" class="mb-3">
-            <a href="/signUp" class="form-check-label link">Don't have an account?
-              Sign Up here!</a>
-          </div>
-
-          <div id="submit-button" class="col-md-4 offset-md-4">
-            <!-- Centered column -->
-            <button type="submit" class="submitBtn">Submit</button>
-          </div>
-
-        </form>
-      </div>
-      <div id="right-column" class="col-md-2"></div>
-      <!-- Offset column to center content -->
+<section class="container">
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+            <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+            <a href="#about">About</a>
+            <a href="#base">Base</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+            <a href="#custom">Custom</a>
+            <a href="#support">Support</a>
+            <a href="#tools">Tools</a>
+        </div>
     </div>
-  </div>
-
-<script src="/js/login.js"></script>
+</section>
+{{/if]}}
