@@ -24,7 +24,10 @@ Listing.init (
             allowNull: false
         },
         user_id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.INTEGER
+        },
+        location_id: {
+            type: DataTypes.INTEGER
         },
         building_type: {
             type: DataTypes.INTEGER
