@@ -37,7 +37,7 @@ router.get("/signup", async (req, res) => {
       res.redirect("/").reload();
       return;
     }
-  } catch (err) {
+  }  catch (err) {
       res.status(500).json(err);
     }
 })
