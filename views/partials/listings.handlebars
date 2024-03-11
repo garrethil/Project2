@@ -1,16 +1,23 @@
-<section class="card">
-  <a href="/listings/{{id}}">
-    <header>{{name}}</header>
-    <img src="/images/{{property.[0].filename}}" alt="{{property.[0].description}}">
-  </a>
-</section>
-
-<div class="container">    
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+<div class="row">
+  {{#each listings}}
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <!-- Property Image-->
+        <img src="/images/{{image}}" class="card-img-top" alt="{{altText}}">
+        <!-- Card Body Section-->
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Price: {{price}}</li>
+            <li class="list-group-item">Adresss: {{address_name}}</li>
+            <li class="list-group-item">Description: {{description}}</li>
+            <li class="list-group-item">Location: {{location_id}}</li>
+            <li class="list-group-item">Building Type: {{building_type}}</li>
+            <li class="list-group-item">Listing Type: {{listing_type}}</li>
+          </ul>
+          <!-- Button for more information -->
+          <a href="/listing/{{id}}" class="btn btn-primary mt-2">More Information</a>
+        </div>
       </div>
     </div>
+  {{/each}}
+</div>
