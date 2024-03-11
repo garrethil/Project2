@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const sequelize = require("../config/connection");
 const { User, Listing, City, BuildingType, ListingType } = require("../models");
 
 // GET method for homepage route to render hompage views
@@ -56,7 +55,7 @@ router.get("/logout", async (req, res) => {
 
 //get all cities to select a city of choice when making a listing or browsing listings
 
-get.router("/cities", async (req, res) => {
+router.get("/cities", async (req, res) => {
     try {
         const cityNames = await City.findAll()  
     
@@ -72,7 +71,7 @@ get.router("/cities", async (req, res) => {
 
 // get all building types
 
-get.router("/buildingTypes", async (req, res) => {
+router.get("/buildingTypes", async (req, res) => {
     try {
         const buildingTypeData = await BuildingType.findAll()   
     
@@ -90,7 +89,7 @@ get.router("/buildingTypes", async (req, res) => {
 
 // get all listing types
 
-get.router("/listingTypes", async (req, res) => {
+router.get("/listingTypes", async (req, res) => {
     try {
         const listingTypeData = await ListingType.findAll()   
     
