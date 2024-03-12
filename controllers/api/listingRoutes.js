@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const { User, Listing, City, BuildingType, ListingType } = require("../../models");
-const path = require("path");
 const withAuth = require("../../utils");
 const multer = require("multer");
 const storage = multer.diskStorage({
