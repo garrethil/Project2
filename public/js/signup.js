@@ -2,17 +2,17 @@
 const handleFormSubmit = async (event) => {
   event.preventDefault(); // Prevent default form submission behavior
 
-  // Get username, email, and password input values, and trim any whitespace
-  const username = document.querySelector("#username").value.trim();
+  // Get user_name, email, and password input values, and trim any whitespace
+  const user_name = document.querySelector("#username").value.trim();
   const email = document.querySelector("#email").value.trim();
   const password = document.querySelector("#password").value.trim();
 
   // Check if all fields are provided
-  if (username && email && password) {
-    // Send a POST request to the API endpoint with username, email, and password
-    const response = await fetch("/api/users/register", {
+  if (user_name && email && password) {
+    // Send a POST request to the API endpoint with user_name, email, and password
+    const response = await fetch("api/users/", {
       method: "POST",
-      body: JSON.stringify({ username, email, password }),
+      body: JSON.stringify({ user_name, email, password }),
       headers: { "Content-Type": "application/json" },
     });
 
