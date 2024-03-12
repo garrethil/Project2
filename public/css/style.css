@@ -72,12 +72,12 @@ body {
 .home-navbar {
   text-align: center;
   font-weight: 600;
-  font-size: 1.33rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   background-color: #1c322d; /* Change the color */
 }
 
-.test1 {
+.add-margin {
   margin-bottom: 0px;
 }
 
@@ -111,4 +111,16 @@ body {
 
 p {
   font-family: "Montserrat", sans-serif;
+}
+
+.featured-items {
+  background-color: #363333;
+  box-shadow: -15px 15px 0 #fff;
+}
+
+h3 {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
 }
