@@ -5,6 +5,10 @@
 /* The styling for the login as well as the sign up views... */
 /* will share the same styling */
 
+body {
+  background-color: #f6f6f4;
+}
+
 body.login-page,
 .signup-page {
   background-color: #f6e9e9;
@@ -135,7 +139,7 @@ p {
 
 .featured-items {
   background-color: #363333;
-  box-shadow: -15px 15px 0 #1c322d;
+  box-shadow: -15px 15px 0 #9ca7a1;
 }
 
 h3 {
