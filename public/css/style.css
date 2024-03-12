@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+/* ! NOTE! */
+
+/* The styling for the login as well as the sign up views... */
+/* will share the same styling */
+
+body {
+  background-color: #f6f6f4;
+}
+
+body.login-page,
+.signup-page {
+  background-color: #f6e9e9;
+  opacity: 1;
+  background-image: radial-gradient(#363333 1.05px, transparent 1.05px),
+    radial-gradient(#363333 1.05px, #f6e9e9 1.05px);
+  background-size: 42px 42px;
+  background-position:
+    0 0,
+    21px 21px;
+}
+
+body {
+  font-family: "Brusio_Regular", sans-serif;
+}
+
+.login,
+.signup {
+  background-color: #1c322d; /* Change the color */
+  box-shadow: -30px 15px 0 #9ca7a1; /* Added box shadow for login form */
+  transition: box-shadow 0.8s ease; /* Transition effect */
+}
+
+.login:hover,
+.signup:hover {
+  box-shadow: 30px 15px 0 #9ca7a1; /* Added box shadow for login form */
+}
+
+#emailHelp {
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.form-label {
+  font-weight: 800;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.link {
+  font-size: 0.85rem;
+}
+
+.submitBtn {
+  background-color: #9ca7a1;
+  color: #fff;
+  margin: auto;
+  display: block;
+  min-width: 10rem;
+  box-sizing: border-box;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.23rem;
+  transition: 0.4s ease;
+  outline: none; /* Remove outline in general */
+  border: none;
+}
+
+.submitBtn:hover {
+  background-color: #007bff;
+}
+.home-navbar {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  background-color: #1c322d; /* Change the color */
+}
+
+.add-margin {
+  margin-bottom: 0px;
+}
+
+.home-navbar ul {
+  display: inline-flex;
+  list-style-type: none; /* Remove bullet points */
+}
+
+.home-navbar ul li {
+  margin: 0 1rem;
+  position: relative; /* Position relative for ::after pseudo-element */
+}
+
+.home-navbar ul li a {
+  color: #fff;
+  text-decoration: none; /* Remove decoration from links */
+  transition:
+    opacity 0.25s ease,
+    color 0.25s ease; /* Transition effect */
+}
+
+.home-navbar ul li::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.8s ease; /* Transition effect */
+}
+
+.home-navbar ul li:hover::after {
+  width: 100%; /* Expand the underline on hover */
+}
+
+.home-navbar ul li:hover a {
+  color: #9ca7a1;
+}
+
+.main-header {
+  color: #fff;
+  text-align: center;
+  background-color: #9ca7a1;
+}
+
+.hook {
+  font-weight: bold;
+  font-size: 2.3rem;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
+.featured-items {
+  background-color: #363333;
+  box-shadow: -15px 15px 0 #9ca7a1;
+}
+
+h3 {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+}
+
+.web-name {
+  text-align: center;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 5px; /* Adjust the value to your preference */
+}
+.web-name a {
+  text-decoration: none;
+  color: black;
+}
+
+.login-logout {
+  font-size: 1.22rem;
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+.login-logout a {
+  text-decoration: none;
+}

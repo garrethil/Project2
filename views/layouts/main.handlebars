@@ -1,0 +1,53 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEBSITE NAME</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/jass.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <div class="header container-fluid p-4">
+      <div class="row">
+
+        <div class="col-12 col-md-8">
+          <h1 class="login-logout">
+            <!-- Conditionally render login or logout links -->
+            {{#if logged_in}}
+              <a id="logout" href="/logout">LOGOUT</a>
+            {{else}}
+              <a href="/login">LOGIN</a>
+            {{/if}}</h1>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <h1 class="fs-3 web-name"><a href="/">Nestify</a></h1>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <!-- Render the sub layout -->
+      {{{body}}}
+    </main>
+
+    <footer></footer>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    ></script>
+
+    <!-- Render script for logged in users only -->
+
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+
+  </body>
+
+</html>
