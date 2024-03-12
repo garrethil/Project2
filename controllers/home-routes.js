@@ -5,6 +5,10 @@ const { User, Listing, City, BuildingType, ListingType } = require("../models");
 // GET method for homepage route to render hompage views
 router.get("/", async (req, res) => {
   try {
+      res.render("homepage", {
+      logged_in: req.session.logged_in,
+    });
+
     const listingData = await Listing.findAll({
       include: [
         {
@@ -21,6 +25,24 @@ router.get("/", async (req, res) => {
         },
       ],
     });
+    
+    const listingData = await Listing.findAll({
+      include: [
+        {
+          model: City,
+          attributes: ["city_name"],
+        },
+        {
+          model: BuildingType,
+          attributes: ["building_type"],
+        },
+        {
+          model: ListingType,
+          attributes: ["listing_type"],
+        },
+      ],
+    });
+
 
     // Sterlize the data
     const listings = listingData.map((listing) => listing.get({ plain: true }));
