@@ -3,7 +3,7 @@ const { User, Listing, City, BuildingType, ListingType } = require("../../models
 const withAuth = require("../../utils");
 
 // delete Listing by ID
-router.delete('/listings/:id', withAuth, async (req, res) => {
+router.delete("/listings/:id", withAuth, async (req, res) => {
   try {
     const listingData = await Listing.destroy({
       where: {
@@ -12,7 +12,7 @@ router.delete('/listings/:id', withAuth, async (req, res) => {
     });
 
     if (!listingData) {
-      res.status(404).json({ message: 'No listing found with this id!' });
+      res.status(404).json({ message: "No listing found with this id!" });
       return;
     }
 
@@ -23,11 +23,11 @@ router.delete('/listings/:id', withAuth, async (req, res) => {
 });
 
 // new listing
-router.post('/listings', withAuth, async (req, res) => {
+router.post("/listings", withAuth, async (req, res) => {
   try {
     const { address_name, description, price, user_id, building_type, listing_type } = req.body;
 
-    const newListing = await Listing.create({ 
+    const newListing = await Listing.create({
       address_name,
       description,
       price,
