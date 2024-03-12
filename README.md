@@ -5,6 +5,14 @@
  ## Description
   Nestify is meant to make listing your property or rental a breeze. The user is easily able to make listings once they have an account for others to browse by location, property type or listing type. Nestify is meant to simplify the process of making a realestate listing and allow the users to start connecting with intersted buyers or renters quickly. Nestify uses Handlebars.js and bootstrap for the front end, the back end uses node, express, MySQL and Sequilzie for all routers and database interaction. The multer npm package is used to upload files with the new listing to the server. All login functionality is handled with express-session. 
 
+  ## Table of Contents
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributers](#contributers)
+  - [Contributing](#contributing)
+  - [Questions](#questions)
+
   ## Installation 
   N/A 
 
@@ -18,10 +26,14 @@
  Sign Up Page:
   ![Sign up page](./public/assets/images/signup.png)
 
+  ## Contributers
+  https://github.com/F3N215
+  https://github.com/Sajjadalgburi 
+  https://github.com/MunibaP 
+  https://github.com/garrethil 
+
   ## License
   MIT License
 
   ## Questions
-  [Github Profile](https://github.com/garrethil)
-
   For any further questions you may contact: garrethildebrandt@gmail.com
