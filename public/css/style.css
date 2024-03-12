@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
 /* ! NOTE! */
 
 /* The styling for the login as well as the sign up views... */
@@ -93,4 +95,20 @@ body {
   color: #fff;
 
   text-decoration: none; /* Remove decoration from links */
+}
+
+.main-header {
+  color: #fff;
+  text-align: center;
+  background-color: #9ca7a1;
+}
+
+.hook {
+  font-weight: bold;
+  font-size: 2.3rem;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
 }
