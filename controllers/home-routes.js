@@ -9,8 +9,30 @@ router.get("/", async (req, res) => {
       logged_in: req.session.logged_in,
     });
 
+    const listingData = await Listing.findAll({
+      include: [
+        {
+          model: City,
+          attributes: ["city_name"],
+        },
+        {
+          model: BuildingType,
+          attributes: ["building_type"],
+        },
+        {
+          model: ListingType,
+          attributes: ["listing_type"],
+        },
+      ],
+    });
+
+    // Sterlize the data
+    const listings = listingData.map((listing) => listing.get({ plain: true }));
+
+    console.log(listings);
+
     // Render homepage with login status
-    res.render("homepage", { logged_in: req.session.logged_in });
+    res.render("homepage", { listings, logged_in: req.session.logged_in });
   } catch (err) {
     console.error(err);
     res.status(500).json(err);
@@ -54,7 +76,7 @@ router.get("/logout", async (req, res) => {
 
 //get all cities to select a city of choice when making a listing or browsing listings
 
-get.router("/cities", async (req, res) => {
+router.get("/cities", async (req, res) => {
   try {
     const cityNames = await City.findAll();
 
@@ -68,7 +90,6 @@ get.router("/cities", async (req, res) => {
 });
 
 // get all building types
-
 router.get("/buildingTypes", async (req, res) => {
   try {
     const buildingTypeData = await BuildingType.findAll();
