@@ -5,7 +5,7 @@ const { User, Listing, City, BuildingType, ListingType } = require("../models");
 // GET method for homepage route to render hompage views
 router.get("/", async (req, res) => {
   try {
-      res.render("homepage", {
+    res.render("homepage", {
       logged_in: req.session.logged_in,
     });
 
@@ -25,24 +25,6 @@ router.get("/", async (req, res) => {
         },
       ],
     });
-    
-    const listingData = await Listing.findAll({
-      include: [
-        {
-          model: City,
-          attributes: ["city_name"],
-        },
-        {
-          model: BuildingType,
-          attributes: ["building_type"],
-        },
-        {
-          model: ListingType,
-          attributes: ["listing_type"],
-        },
-      ],
-    });
-
 
     // Sterlize the data
     const listings = listingData.map((listing) => listing.get({ plain: true }));
@@ -93,7 +75,6 @@ router.get("/logout", async (req, res) => {
 });
 
 //get all cities to select a city of choice when making a listing or browsing listings
-
 router.get("/cities", async (req, res) => {
   try {
     const cityNames = await City.findAll();
