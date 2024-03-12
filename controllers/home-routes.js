@@ -1,13 +1,10 @@
 const router = require("express").Router();
+// const sequelize = require("../config/connection");
 const { User, Listing, City, BuildingType, ListingType } = require("../models");
 
 // GET method for homepage route to render hompage views
 router.get("/", async (req, res) => {
   try {
-    res.render("homepage", {
-      logged_in: req.session.logged_in,
-    });
-
     // Render homepage with login status
     res.render("homepage", { logged_in: req.session.logged_in });
   } catch (err) {
@@ -51,7 +48,8 @@ router.get("/logout", async (req, res) => {
   }
 });
 
-//get all cities to select a city of choice when making a listing or browsing listings b374a93 (fixing syntax)
+//get all cities to select a city of choice when making a listing or browsing listings
+
 router.get("/cities", async (req, res) => {
   try {
     const cityNames = await City.findAll();
