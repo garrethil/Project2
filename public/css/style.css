@@ -1,5 +1,3 @@
-
-
 /* ! NOTE! */
 
 /* The styling for the login as well as the sign up views... */
@@ -17,6 +15,10 @@ body.login-page,
     21px 21px;
 }
 
+body {
+  font-family: "Brusio_Regular", sans-serif;
+}
+
 .login,
 .signup {
   background-color: #1c322d; /* Change the color */
@@ -24,8 +26,7 @@ body.login-page,
   transition: box-shadow 0.8s ease; /* Transition effect */
 }
 
-
-.login:hover, 
+.login:hover,
 .signup:hover {
   box-shadow: 30px 15px 0 #9ca7a1; /* Added box shadow for login form */
 }
@@ -64,4 +65,32 @@ body.login-page,
 
 .submitBtn:hover {
   background-color: #007bff;
+}
+
+.home-navbar {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.33rem;
+  text-transform: uppercase;
+  background-color: #1c322d; /* Change the color */
+}
+
+.test1 {
+  margin-bottom: 0px;
+}
+
+.home-navbar ul {
+  display: inline-flex;
+  list-style-type: none; /* Remove bullet points */
+}
+
+.home-navbar ul li {
+  margin: 0 1rem;
+  text-decoration: none; /* Remove decoration from list items */
+}
+
+.home-navbar ul li a {
+  color: #fff;
+
+  text-decoration: none; /* Remove decoration from links */
 }
