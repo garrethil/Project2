@@ -15,29 +15,24 @@
   <body>
     <div class="header container-fluid p-4">
       <div class="row">
-        <nav
-          class="navbar col-12 col-md-8 justify-content-md-start justify-content-center"
-        >
-          <ul>
-            <li class="my-2">
-              <!-- Conditionally render login or logout links -->
-              {{#if logged_in}}
-                <a id="logout" href="/logout">Logout</a>
-              {{else}}
-                <a href="/login">Login</a>
-              {{/if}}
-            </li>
-          </ul>
-        </nav>
-        <div
-          class="col-12 col-md-4 text-center box d-flex justify-content-center"
-        >
-          <h1 class="fs-3 h1El text-uppercase"><a href="/">Web Name</a></h1>
+
+        <div class="col-12 col-md-8">
+          <h1 class="login-logout">
+            <!-- Conditionally render login or logout links -->
+            {{#if logged_in}}
+              <a id="logout" href="/logout">LOGOUT</a>
+            {{else}}
+              <a href="/login">LOGIN</a>
+            {{/if}}</h1>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <h1 class="fs-3 web-name"><a href="/">Nestify</a></h1>
         </div>
       </div>
     </div>
 
-    <main class="container-fluid mt-5">
+    <main>
       <!-- Render the sub layout -->
       {{{body}}}
     </main>
