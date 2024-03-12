@@ -10,7 +10,6 @@
   - [Usage](#usage)
   - [License](#license)
   - [Contributers](#contributers)
-  - [Contributing](#contributing)
   - [Questions](#questions)
 
   ## Installation 
