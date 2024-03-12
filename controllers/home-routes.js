@@ -6,11 +6,14 @@ const { User, Listing, City, BuildingType, ListingType } = require("../models");
 router.get("/", async (req, res) => {
   try {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     res.render("homepage", {
       logged_in: req.session.logged_in,
     });
 
+=======
+>>>>>>> 8a3e80d (Fixed many bugs with naming and some http request)
     const listingData = await Listing.findAll({
       include: [
         {
@@ -41,11 +44,10 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 router.get("/login", async (req, res) => {
   try {
     if (req.session.logged_in) {
-      res.redirect("/").reload();
+      res.redirect("/");
       return;
     }
 
@@ -59,9 +61,10 @@ router.get("/login", async (req, res) => {
 router.get("/signup", async (req, res) => {
   try {
     if (req.session.logged_in) {
-      res.redirect("/").reload();
+      res.redirect("/");
       return;
     }
+    res.render("signup", { logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -70,7 +73,7 @@ router.get("/signup", async (req, res) => {
 // GET method for logout route
 router.get("/logout", async (req, res) => {
   try {
-    res.redirect("/").reload();
+    res.redirect("/");
   } catch (err) {
     console.error(err);
     res.status(500).json(err);
@@ -85,9 +88,8 @@ router.get("/cities", async (req, res) => {
 
     const cityName = cityNames.map((type) => type.get({ plain: true }));
     res.render("locationspage", { cityName });
-
-    res.status(200).json(cityData);
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
@@ -101,9 +103,8 @@ router.get("/buildingTypes", async (req, res) => {
       type.get({ plain: true }),
     );
     res.render("buildingtypepage", { buildingTypes });
-
-    res.status(200).json(buildingTypeData);
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
@@ -118,8 +119,8 @@ router.get("/listingTypes", async (req, res) => {
       type.get({ plain: true }),
     );
     res.render("listingtypepage", { listingTypes });
-    res.status(200).json(listingTypeData);
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
@@ -135,8 +136,8 @@ router.get("/listings", async (req, res) => {
     const listings = listingData.map((listing) => listing.get({ plain: true }));
 
     res.render("listingspage", { listings });
-    res.status(200).json(listingData);
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
@@ -158,9 +159,8 @@ router.get("/listings/:id", async (req, res) => {
     );
 
     res.render("listing", { listingInfo });
-
-    res.status(200).json(listingData);
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
