@@ -68,7 +68,6 @@ body {
 .submitBtn:hover {
   background-color: #007bff;
 }
-
 .home-navbar {
   text-align: center;
   font-weight: 600;
@@ -88,13 +87,34 @@ body {
 
 .home-navbar ul li {
   margin: 0 1rem;
-  text-decoration: none; /* Remove decoration from list items */
+  position: relative; /* Position relative for ::after pseudo-element */
 }
 
 .home-navbar ul li a {
   color: #fff;
-
   text-decoration: none; /* Remove decoration from links */
+  transition:
+    opacity 0.25s ease,
+    color 0.25s ease; /* Transition effect */
+}
+
+.home-navbar ul li::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  bottom: -5px;
+  left: 0;
+  transition: width 0.8s ease; /* Transition effect */
+}
+
+.home-navbar ul li:hover::after {
+  width: 100%; /* Expand the underline on hover */
+}
+
+.home-navbar ul li:hover a {
+  color: #9ca7a1;
 }
 
 .main-header {
