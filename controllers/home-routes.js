@@ -51,7 +51,6 @@ router.get("/logout", async (req, res) => {
   }
 });
 
-//get all cities to select a city of choice when making a listing or browsing listings
 
 router.get("/cities", async (req, res) => {
   try {
@@ -59,6 +58,7 @@ router.get("/cities", async (req, res) => {
 
     const cityName = cityNames.map((type) => type.get({ plain: true }));
     res.render("locationspage", { cityName });
+
 
     res.status(200).json(cityData);
   } catch (err) {
