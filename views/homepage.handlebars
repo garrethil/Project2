@@ -15,14 +15,15 @@
     <div class="main-header p-5">
       <h2 class="hook">Browse Your Dreams</h2>
 
-      {{!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam
+      {{! <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam
         architecto officia quam sequi, provident eaque. Perferendis totam
         blanditiis dicta ullam, explicabo amet illum nihil. Provident expedita
-        assumenda quod eveniet blanditiis.</p> --}}
-        <p>Welcome to your ultimate real estate hub! Whether you're on the hunt for your dream home, 
-        eager to explore a wide range of listings, ready to showcase your property, or seeking expert guidance from our agents, 
-        we've tailored our platform to meet all your needs. 
-        Join us on this journey today!</p>
+        assumenda quod eveniet blanditiis.</p> }}
+      <p>Welcome to your ultimate real estate hub! Whether you're on the hunt
+        for your dream home, eager to explore a wide range of listings, ready to
+        showcase your property, or seeking expert guidance from our agents,
+        we've tailored our platform to meet all your needs. Join us on this
+        journey today!</p>
 
     </div>
   </div>
@@ -35,26 +36,30 @@
 
   <!-- Cards Section -->
   <div class="row justify-content-center">
-    {{#each listings}}
+    {{#each listings as |listing|}}
       <div class="col-md-6 mb-4">
         <div class="card">
           <!-- Property Image -->
-          <img src="/images/{{image}}" class="card-img-top" alt="{{altText}}">
-        
+          <img
+            src="/images/{{listing.image}}"
+            class="card-img-top"
+            alt="{{listing.altText}}"
+          />
+
           <!-- Card Body Section -->
           <div class="card-body">
             <!-- Price -->
-            <h5 class="card-title">Price: {{price}}</h5>
-          
+            <h5 class="card-title">Price: {{listing.price}}</h5>
+
             <!-- Address -->
-            <p class="card-text">Address: {{address_name}}</p>
-          
+            <p class="card-text">Address: {{listing.address_name}}</p>
+
             <!-- Location -->
-            <p class="card-text">Location: {{location_id}}</p>
-          
+            <p class="card-text">Location: {{listing.location_id}}</p>
+
             <!-- Listing Type -->
-            <p class="card-text">Listing Type: {{listing_type}}</p>
-          
+            <p class="card-text">Listing Type: {{listing.listing_type}}</p>
+
             {{!-- <!-- More Information Button -->
             <a href="/listing/{{id}}" class="btn btn-primary">More Information</a> --}}
           </div>
