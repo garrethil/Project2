@@ -23,17 +23,18 @@ router.get("/", async (req, res) => {
     });
 
     // Sterlize the data
-    const listing = listingData.map((listing) => listing.get({ plain: true }));
+    const listings = listingData.map((data) => data.get({ plain: true }));
 
-    console.log(listing);
+    console.log(listings);
 
     // Render homepage with login status
-    res.render("homepage", { listing, logged_in: req.session.logged_in });
+    res.render("homepage", { listings, logged_in: req.session.logged_in });
   } catch (err) {
     console.error(err);
     res.status(500).json(err);
   }
 });
+
 router.get("/login", async (req, res) => {
   try {
     if (req.session.logged_in) {
