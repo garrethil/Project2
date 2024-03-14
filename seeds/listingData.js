@@ -5,7 +5,7 @@ const listingData = [
     address_name: "123 Main St",
     description:
       "Modern 3-bed, 2-bath city home with updated kitchen, stainless steel appliances, granite countertops. Open-concept layout with ample natural light. Private backyard oasis with spacious patio, perfect for entertaining. Conveniently located near amenities, parks, and top-rated schools",
-    price: 500000,
+    price: 124000,
     user_id: 1,
     imageUrl:
       "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -29,7 +29,7 @@ const listingData = [
     address_name: "789 Oak Lane",
     description:
       "Contemporary 3-bedroom, 2.5-bathroom townhouse with sleek design. Updated kitchen featuring quartz countertops and stainless steel appliances. Spacious living area with hardwood floors. Master suite with walk-in closet. Attached garage and private patio. Close to shopping and dining.",
-    price: 620000,
+    price: 320600,
     user_id: 3,
     imageUrl:
       "https://media.istockphoto.com/id/471569149/photo/modern-cookie-cutter-townhouses.jpg?s=612x612&w=0&k=20&c=o07J7zGzJ8IPan_gJc9kjDzGsuc-OR2mrgM_CK8mRkg=",
@@ -41,7 +41,7 @@ const listingData = [
     address_name: "101 Maple Avenue",
     description:
       "Classic 4-bed, 3-bath colonial home with character. Renovated kitchen with farmhouse sink and subway tile backsplash. Formal dining room and cozy family room with fireplace. Master suite with clawfoot tub. Large backyard with deck and garden. Convenient to schools and parks.",
-    price: 720000,
+    price: 1020000,
     user_id: 4,
     imageUrl:
       "https://t4.ftcdn.net/jpg/02/79/95/39/360_F_279953994_TmVqT7CQhWQJRLXev4oFmv8GIZTgJF1d.jpg",
@@ -77,7 +77,7 @@ const listingData = [
     address_name: "444 Birch Boulevard",
     description:
       "Cozy 2-bed, 1-bath bungalow with charm. Bright and airy living space with original hardwood floors. Kitchen features vintage cabinets and tile countertops. Fenced backyard with deck and garden beds. Detached garage and driveway parking. Near schools and community amenities.",
-    price: 380000,
+    price: 980000,
     user_id: 1,
     imageUrl:
       "https://www.royalhomes.com/wp-content/uploads/2017/06/bungalow.jpg",
@@ -89,7 +89,7 @@ const listingData = [
     address_name: "555 Walnut Way",
     description:
       "Prime retail space available for lease in bustling downtown area. High foot traffic and visibility. Spacious layout with large storefront windows. Ideal for retail, restaurant, or office use. Close to public transportation and amenities.",
-    price: 8000,
+    price: 3010000,
     user_id: 2,
     imageUrl:
       "https://media.istockphoto.com/id/135877652/photo/new-shopping-center.jpg?s=612x612&w=0&k=20&c=rmPt1VBDUhPI_nqvtOL7xgKUtk1n-HjLZi--njdgBPc=",
@@ -101,7 +101,7 @@ const listingData = [
     address_name: "666 Spruce Street",
     description:
       "Quaint 3-bedroom cottage with updates. Renovated kitchen with granite countertops and stainless steel appliances. Cozy living room with wood-burning stove. Sunroom overlooking backyard. Detached studio perfect for office or guest space. Walking distance to shops and restaurants.",
-    price: 420000,
+    price: 520000,
     user_id: 3,
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Bignor_cottage.JPG/1600px-Bignor_cottage.JPG",
