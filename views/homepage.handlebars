@@ -9,20 +9,15 @@
 
 <div class="container-fluid">
 
-  {{! <div class="col"></div> }}
-
   <div class="row">
     <div class="main-header p-5">
       <h2 class="hook">Browse Your Dreams</h2>
 
-      {{!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam
-        architecto officia quam sequi, provident eaque. Perferendis totam
-        blanditiis dicta ullam, explicabo amet illum nihil. Provident expedita
-        assumenda quod eveniet blanditiis.</p> --}}
-        <p>Welcome to your ultimate real estate hub! Whether you're on the hunt for your dream home, 
-        eager to explore a wide range of listings, ready to showcase your property, or seeking expert guidance from our agents, 
-        we've tailored our platform to meet all your needs. 
-        Join us on this journey today!</p>
+      <p>Welcome to your ultimate real estate hub! Whether you're on the hunt
+        for your dream home, eager to explore a wide range of listings, ready to
+        showcase your property, or seeking expert guidance from our agents,
+        we've tailored our platform to meet all your needs. Join us on this
+        journey today!</p>
 
     </div>
   </div>
@@ -35,63 +30,40 @@
 
   <!-- Cards Section -->
   <div class="row justify-content-center">
-    {{#each listings}}
-      <div class="col-md-6 mb-4">
+    {{#each listings as |listing|}}
+      <div class="col-12 col-md-4 mb-2">
         <div class="card">
           <!-- Property Image -->
-          <img src="/images/{{image}}" class="card-img-top" alt="{{altText}}">
-        
+          
+          <a href="/listings/{{listing.id}}">
+          <img
+            src="{{listing.imageUrl}}"
+            class="card-img-top"
+            alt="{{listing.altText}}"
+          />
+
           <!-- Card Body Section -->
-          <div class="card-body">
+          <div class="card-body p-3">
+
+            <p class="card-text detais">Listing Type {{listing.listingType.listing_type}} || Click me!</p>
+
             <!-- Price -->
-            <h5 class="card-title">Price: {{price}}</h5>
-          
+            <h5 class="card-title price">${{formatPrice listing.price}}</h5>
+
             <!-- Address -->
-            <p class="card-text">Address: {{address_name}}</p>
-          
+            <p class="card-text address">{{listing.address_name}}</p>
+
             <!-- Location -->
-            <p class="card-text">Location: {{location_id}}</p>
-          
-            <!-- Listing Type -->
-            <p class="card-text">Listing Type: {{listing_type}}</p>
-          
+            <p class="card-text location">Location: {{listing.city.city_name}}</p>
+
+            {{!-- <p class="card-text">Listing Type: {{listing.listing_type}}</p> --}}
+
             {{!-- <!-- More Information Button -->
-            <a href="/listing/{{id}}" class="btn btn-primary">More Information</a> --}}
+            <a href="/listing/{{id}}" class="btn btn-primary">More Information</a> --}}</a>
+          
           </div>
         </div>
       </div>
     {{/each}}
   </div>
-
-  {{!-- for some reason the below code gives an error when you call the {{listing.price and so on}} --}}
-
-  {{!-- 
-  {{#each listings as |listing|}}
-    <div class="row">
-      <div class="col-3 properties">
-        <div class="price"><h4>{{listing.price}}</h4></div>
-      </div>
-    </div>
-  {{/each}} --}}
-
 </div>
-
-{{! The data is below for your views }}
-
-{{! 
-{
-    id: 9,
-    address_name: '666 Spruce Street',
-    description: 'Quaint 3-bedroom cottage with updates. Renovated kitchen with granite countertops and stainless steel appliances. Cozy living room with wood-burning stove. Sunroom overlooking backyard. Detached studio perfect for office or guest space. Walking distance to shops and restaurants.',
-    price: '420000',
-    user_id: 3,
-    imageUrl: null,
-    location_id: 4,
-    building_type: 3,
-    listing_type: 2,
-    createdAt: 2024-03-12T01:38:37.000Z,
-    updatedAt: 2024-03-12T01:38:37.000Z,
-    city: { city_name: 'Barrie' },
-    buildingType: { building_type: 'Cottage' },
-    listingType: { listing_type: 'For Rent' }
-  } }}
