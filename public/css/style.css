@@ -171,3 +171,19 @@ h3 {
 .login-logout a {
   text-decoration: none;
 }
+.card {
+  background-color: #363333;
+  transition:
+    box-shadow 0.5s ease,
+    transform 0.5s ease;
+}
+
+.card a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.card:hover {
+  box-shadow: 15px 10px 0px #9ca7a1;
+  transform: translate(-1px, -1px); /* Adjust the translation */
+}
