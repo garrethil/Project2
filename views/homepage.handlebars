@@ -31,7 +31,7 @@
   <!-- Cards Section -->
   <div class="row justify-content-center">
     {{#each listings as |listing|}}
-      <div class="col-md-6 mb-4">
+      <div class="col-12 col-md-4 mb-2">
         <div class="card">
           <!-- Property Image -->
           
@@ -48,10 +48,10 @@
             <p class="card-text detais">Listing Type {{listing.listingType.listing_type}} || Click me!</p>
 
             <!-- Price -->
-            <h5 class="card-title price">${{listing.price}}</h5>
+            <h5 class="card-title price">${{formatPrice listing.price}}</h5>
 
             <!-- Address -->
-            <p class="card-text address">Address: {{listing.address_name}}</p>
+            <p class="card-text address">{{listing.address_name}}</p>
 
             <!-- Location -->
             <p class="card-text location">Location: {{listing.city.city_name}}</p>
