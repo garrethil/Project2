@@ -34,8 +34,10 @@
       <div class="col-md-6 mb-4">
         <div class="card">
           <!-- Property Image -->
+          
+          <a href="/listings/{{listing.id}}">
           <img
-            src="/images/{{listing.image}}"
+            src="{{listing.imageUrl}}"
             class="card-img-top"
             alt="{{listing.altText}}"
           />
@@ -43,7 +45,7 @@
           <!-- Card Body Section -->
           <div class="card-body">
             <!-- Price -->
-            <h5 class="card-title">Price: {{listing.price}}</h5>
+            <h5 class="card-title">Price: ${{listing.price}}</h5>
 
             <!-- Address -->
             <p class="card-text">Address: {{listing.address_name}}</p>
@@ -55,7 +57,8 @@
             <p class="card-text">Listing Type: {{listing.listing_type}}</p>
 
             {{!-- <!-- More Information Button -->
-            <a href="/listing/{{id}}" class="btn btn-primary">More Information</a> --}}
+            <a href="/listing/{{id}}" class="btn btn-primary">More Information</a> --}}</a>
+          
           </div>
         </div>
       </div>
