@@ -85,7 +85,6 @@ body {
 }
 
 .home-navbar ul {
-  display: inline-flex;
   list-style-type: none; /* Remove bullet points */
 }
 
@@ -147,6 +146,10 @@ h3 {
   text-transform: uppercase;
   text-align: center;
   font-weight: 700;
+}
+
+.fah3 {
+  font-size: 1.1rem;
 }
 
 .web-name {
