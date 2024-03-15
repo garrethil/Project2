@@ -1,14 +1,12 @@
 const router = require("express").Router();
+const withAuth = require("../utils/auth");
+
 // const sequelize = require("../config/connection");
 const { User, Listing, City, BuildingType, ListingType } = require("../models");
 
-// GET method for homepage route to render hompage views
+// GET method for homepage route to render homepage views
 router.get("/", async (req, res) => {
   try {
-    res.render("homepage", {
-      logged_in: req.session.logged_in,
-    });
-
     const listingData = await Listing.findAll({
       include: [
         {
@@ -27,17 +25,21 @@ router.get("/", async (req, res) => {
     });
 
     // Sterlize the data
-    const listings = listingData.map((listing) => listing.get({ plain: true }));
+    const listings = listingData.map((data) => data.get({ plain: true }));
 
     console.log(listings);
 
     // Render homepage with login status
-    res.render("homepage", { listings, logged_in: req.session.logged_in });
+    res.render("homepage", {
+      listings,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     console.error(err);
     res.status(500).json(err);
   }
 });
+
 router.get("/login", async (req, res) => {
   try {
     if (req.session.logged_in) {
@@ -136,7 +138,7 @@ router.get("/listings", async (req, res) => {
 });
 
 // get listing by id
-router.get("/listings/:id", async (req, res) => {
+router.get("/listings/:id", withAuth, async (req, res) => {
   try {
     const listingData = await Listing.findByPk(req.params.id, {
       include: [{ model: City, ListingType, BuildingType, User }],
