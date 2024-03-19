@@ -77,7 +77,7 @@ body {
   font-weight: 600;
   font-size: 1.1rem;
   text-transform: uppercase;
-  background-color: #1c322d; /* Change the color */
+  background-color: #1c3221; /* Change the color */
 }
 
 .add-margin {
@@ -85,8 +85,12 @@ body {
 }
 
 .home-navbar ul {
-  display: inline-flex;
   list-style-type: none; /* Remove bullet points */
+}
+
+#icon {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.5)
 }
 
 .home-navbar ul li {
@@ -147,6 +151,10 @@ h3 {
   text-transform: uppercase;
   text-align: center;
   font-weight: 700;
+}
+
+.fah3 {
+  font-size: 1.1rem;
 }
 
 .web-name {
